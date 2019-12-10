@@ -10,6 +10,8 @@ function ShoppingList(props) {
 
   const { items } = props.item;
 
+  console.log(items)
+
   useEffect(() => {
     props.getItems();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
