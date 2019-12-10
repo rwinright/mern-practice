@@ -10,8 +10,6 @@ function ShoppingList(props) {
 
   const { items } = props.item;
 
-  console.log(items)
-
   useEffect(() => {
     props.getItems();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -27,8 +25,8 @@ function ShoppingList(props) {
       <ListGroup>
         <TransitionGroup className="shopping-list">
           {
-            items.map(({ id, name }) => (
-              <CSSTransition key={id} timeout={500} classNames="fade">
+            items.map(({ id, name }, i) => (
+              <CSSTransition key={i} timeout={500} classNames="fade">
                 <ListGroupItem>
                   <Button
                     className="remove-btn"

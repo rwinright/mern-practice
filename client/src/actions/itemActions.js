@@ -3,7 +3,7 @@ import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from './types';
 
 export const getItems = () => dispatch => {
   dispatch(setItemsLoading());
-  axios.get("/api/items").then(res => dispatch({
+  axios.get("http://localhost:5000/api/items").then(res => dispatch({
     type: GET_ITEMS,
     payload: res.data
   }))
